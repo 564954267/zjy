@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            text-align: center;
+            color: #bce8f1;
+            width: 100%;
+            height: 80px;
+            font-size: 50px;
+        }
+        #img1{
+            /*margin-left: 400px;*/
+            width: 600px;
+            height: 600px;
+            float: top;
+        }
+        #img2{
+            /*margin-left: 400px;*/
+            width: 600px;
+            height: 600px;
+            float: bottom;
+        }
+    </style>
+    <script>
+        var arr = ["女","李","晓","星","大","美"];
+        var arr2 = ["1.jpg","2.jpg"]
+        var arr3 = ["4.jpg","5.jpg"]
+        setInterval(()=>{
+            arr.push(arr.shift());
+            var arr1="";
+            for (var i=0;i<arr.length;i++){
+                arr1 +=arr[i];
+            }
+            document.getElementById("div").innerHTML = arr1;
+        },1500)
+
+        setInterval(()=>{
+            arr2.push(arr2.shift());
+            document.getElementById("img1").src = arr2[0] ;
+        },1500)
+
+        setInterval(()=>{
+            arr3.push(arr3.shift());
+            document.getElementById("img2").src = arr3[0] ;
+
+        },1500)
+    </script>
+</head>
+<body background="3%20(2).jpg">
+<div id="div"></div>
+<img src="1.jpg" id="img1" >
+<img src="4.jpg" id="img2" >
+</body>
+</html>

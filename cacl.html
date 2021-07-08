@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>社保在线计算器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #photo{
+            text-align: center;
+        }
+        .img-circle:hover{
+            width: 110px;
+            height: 110px;
+        }
+    </style>
+    <script>
+        function camc(){
+            var money = document.getElementById("money").value;
+            var moneyylgr=money*0.08;
+            var moneyylgs=money*0.2;
+            var moneyyl1gr=money*0.02;
+            var moneyyl1gs=money*0.06;
+            var moneysygr=money*0.005;
+            var moneysygs=money*0.015;
+            var moneygsgs=money*0.005;
+            var moneysy1gs=money*0.008;
+            var moneygjjgr=money*0.12;
+            var moneygjjgs=money*0.12;
+            var moneygrhj=moneyylgr+moneyyl1gr+moneysygr+moneygjjgr;
+            var moneygshj=moneyylgs+moneyyl1gs+moneysygs+moneygsgs+moneysy1gs+moneygjjgs;
+            var moneyzong=moneygrhj+moneygshj;
+            document.getElementById("ylgr").innerHTML="<td>" + moneyylgr+ "</td>"
+            document.getElementById("ylgs").innerHTML="<td>" + moneyylgs+ "</td>"
+            document.getElementById("yl1gr").innerHTML="<td>" + moneyyl1gr+ "</td>"
+            document.getElementById("yl1gs").innerHTML="<td>" + moneyyl1gs+ "</td>"
+            document.getElementById("sygr").innerHTML="<td>" + moneysygr+ "</td>"
+            document.getElementById("sygs").innerHTML="<td>" +moneysygs+ "</td>"
+            document.getElementById("gsgs").innerHTML="<td>" + moneygsgs+ "</td>"
+            document.getElementById("sy1gs").innerHTML="<td>" + moneysy1gs+ "</td>"
+            document.getElementById("gjjgr").innerHTML="<td>" + moneygjjgr+ "</td>"
+            document.getElementById("gjjgs").innerHTML="<td>" + moneygjjgs+ "</td>"
+            document.getElementById("grhj").innerHTML="<td>" + moneygrhj + "</td>"
+            document.getElementById("gshj").innerHTML="<td>" + moneygshj + "</td>"
+            document.getElementById("zong").innerHTML="<td colspan=\"4\">" + moneyzong + "</td>"
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div id="photo" >
+        <img src="3.jpeg" class="img-circle" width="100px" height="100px">
+    </div>
+    <div id="table">
+        <table class="text-center table table-bordered table-striped">
+            <tr>
+                <td>工资</td>
+                <td colspan="3"> <input class="form-control" type="text" id="money" placeholder="请输入个人工资"></td>
+                <td><button class="btn btn-danger btn-block" onclick="camc()">计算</button></td>
+            </tr>
+            <tr class="bg-primary">
+                <td>险种</td>
+                <td>个人%</td>
+                <td>个人</td>
+                <td>公司%</td>
+                <td>公司</td>
+            </tr>
+            <tr>
+                <td>养老</td>
+                <td>8%</td>
+                <td id="ylgr"></td>
+                <td>20%</td>
+                <td id="ylgs"></td>
+            </tr>
+            <tr>
+                <td>医疗</td>
+                <td>2%</td>
+                <td id="yl1gr"></td>
+                <td>6%</td>
+                <td id="yl1gs"></td>
+            </tr>
+            <tr>
+                <td>失业</td>
+                <td>0.5%</td>
+                <td id="sygr"></td>
+                <td>1.5%</td>
+                <td id="sygs"></td>
+            </tr>
+            <tr>
+                <td>工伤</td>
+                <td></td>
+                <td></td>
+                <td>0.5%</td>
+                <td id="gsgs"></td>
+            </tr>
+            <tr>
+                <td>生育</td>
+                <td></td>
+                <td></td>
+                <td>0.8%</td>
+                <td id="sy1gs"></td>
+            </tr>
+            <tr>
+                <td>公积金</td>
+                <td>12%</td>
+                <td id="gjjgr"></td>
+                <td>12%</td>
+                <td id="gjjgs"></td>
+            </tr>
+            <tr>
+                <td>合计</td>
+                <td>个人合计</td>
+                <td id="grhj"></td>
+                <td>公司合计</td>
+                <td id="gshj"></td>
+            </tr>
+            <tr>
+                <td>总额</td>
+                <td colspan="4" id="zong"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="bottom" style="text-align: center">
+        中北大学软件学院 张佳艺 实习单位：英才汇硕信息科技有限公司
+    </div>
+</div>
+</body>
+</html>
